@@ -1,0 +1,662 @@
+/* 
+main color: #FFA445
+main 2: #9B4F01
+sub: #949494
+bg 1 (light): #E6E6E6
+bg 2 (dark): #393939
+bg 3 (lighter gray): #565656 VERY GOOD
+bg 4: offwhite #FBFBFB
+
+border: 5px solid red;
+
+*/
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FBFBFB;
+}
+
+@media (max-width: 660px) {
+    #pc-part {
+        display: none;
+    }
+}
+
+@media (min-width: 661px) {
+    #report-section {
+        display: none;
+    }
+    
+}
+
+/* TEXT MODIFICATIONS and REUSABLE CLASSES*/
+
+.font-correction {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.spacing {
+    padding: 20px 0 20px 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.font-size-big {
+    font-size: 100px;
+}
+
+.opacity-mid {
+    opacity: 0.2;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.subheader {
+    text-align: center;
+    font-size: 2.3rem;
+}
+
+blockquote p {
+    background-color: light;
+    padding: 15px;
+}
+
+/* NAVBAR AND INTERNAL ITEMS START */
+/* CONTACT BUTTON START */
+
+#contact-button {
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    background-color: #393939;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-decoration: none;
+    user-select: none;
+    overflow: hidden;
+    -webkit-user-drag: none;
+}
+
+#contact-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    
+}
+
+#contact-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#contact-button:hover span {
+    padding-right: 20px;
+    
+}
+
+#contact-button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+#contact-button:hover {
+    background-color: #565656;
+    content: "\00bb";
+}
+
+#contact-button:active {
+    opacity: 0.5
+}
+/* 
+CONTACT BUTTON END 
+NAVBAR CONTINUES
+*/
+
+#logo-image {
+    border-radius: 5px;
+    transition: all 0.25s;
+    background-color: none;
+}
+
+#logo-image:active {
+    opacity: 0.5;
+}
+
+#navbar {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    display: flex;
+    align-items: center;
+    background-color: #393939;
+    justify-content: space-between;
+    border-bottom: 2px #565656 solid;
+}
+
+#navbar-links {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+#navbar-links p {
+    color: lightgrey;
+    padding: 0 10px 0 10px;
+}
+
+.navbar-text {
+    font-size: 16px;
+}
+
+.navbar-item {
+    padding: 10px 30px 10px 30px;
+    color: white;
+    text-decoration: none;
+    user-select: none;
+    border-radius: 5px;
+    transition: all .30s;
+    -webkit-user-drag: none;
+}
+
+.navbar-item:hover {
+    border: none;
+    background-color: #565656;
+}
+
+.navbar-item:active {
+    opacity: 0.5;
+}
+
+.navbar-item:visited, .navbar-item:link {
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+/* NAVBAR END */
+
+/* INFO COMPONENT START*/
+
+#img-ppl {
+    border-radius: 5px;
+    border: 5px solid gray;
+}
+
+#comment-aider ol{
+    margin-left: 5vw;
+    margin-right: 5vw;
+    line-height: 30px;
+    background-color: #6e451c;
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #F0F0F0;
+}
+
+#who-we-r {
+    padding: 10px 0 20px 0;
+    margin-top: -10px; 
+    margin-bottom: 0;
+    background-color: #E6E6E6;
+}
+
+#title {
+    color: white;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+
+    
+    animation: slideIn 3s ease;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#main-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position:0 0;
+    opacity: 1;
+    background: black;
+    transition: all 0.25s;
+
+    animation: fadeInDark 3s cubic-bezier(.07,.78,.17,.92);
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+
+#main-image::after {
+    filter: brightness(30%);
+}
+
+@keyframes fadeInDark {
+    from {
+        filter: brightness(100%)
+    }
+    to {
+        filter: brightness(30%)
+    }
+}
+
+#main-cta {
+    opacity: 0;
+    color: white;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    width: 20vw;
+    
+    background-color: #9f6429;
+    padding: 10px;
+    border-radius: 8px;
+
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+
+    animation: slideIn 4s ease;
+    -webkit-animation: slideIn 4s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+
+    overflow: hidden;
+
+    transition: all 0.25s;
+    cursor: pointer;
+    border: none;
+}
+
+#main-cta:active {
+    opacity: 0.5;
+}
+
+#main-cta span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    
+}
+
+#main-cta span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#main-cta:hover span {
+    padding-right: 20px;
+}
+
+#main-cta:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+#main-cta:hover {
+    background-color: #6d451c;
+    content: "\00bb";
+}
+
+.infoh3 {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.main-paragraphs {
+    padding: 0 10vw 0 10vw;
+}
+
+blockquote p {
+    background-color: lightgrey;
+    font-style: italic;
+    border-left: 3px solid darkgrey;
+    border-top: 3px solid darkgrey;
+}
+
+blockquote span {
+    font-weight: bold;
+    font-size: smaller;
+}
+
+.mission-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#mission-text {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    line-height: 30px;
+}
+
+/* Sign Up page */
+
+#signup-header {
+    margin: 80px 0;
+}
+
+#signup-form {
+    margin: 0 5%;
+}
+
+.signup-label {
+    font-size: 1.1em;
+}
+
+.signup-input {
+    font-family: 'Tinos', serif;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    width: 30%;
+    padding: 5px;
+}
+
+textarea.signup-input {
+    width: 40%;
+    font-size: 16px;
+}
+
+#button-signup {
+    color: white;
+    border-radius: 5px;
+    width: 15vw;
+    
+    background-color: #393939;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: 40px;
+    margin-bottom: 30vh;
+
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+
+    overflow: hidden;
+
+    cursor: pointer;
+    border: none;
+}
+
+/* Heatmap Page */
+
+#map {
+    height: 450px;
+    width: 80%;
+    margin: 0 auto;
+    background-color: gray;
+}
+
+#report {
+    display: none;
+}
+
+/* Socials Page */
+
+#socials-title {
+    margin: 15vh 0;
+    text-align: center;
+}
+
+#sl {
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+width: 70%;
+max-width: 700px;
+margin: 0 auto;
+flex-grow: 1;
+gap: 40px;
+margin-bottom: 20vh;
+}
+
+#sl > a {
+margin: 0 auto;
+}
+
+.logo {
+width: 150px;
+}
+
+#discord {
+border-radius: 30px
+}
+
+/* Contact Page */
+
+#contact-form {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 5%;
+}
+
+.subsection-header {
+    font-size: 18px;
+    font-family: 'Tinos', serif;
+    margin-bottom: 10px;
+}
+
+.input-subsection {
+    margin-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px 40px;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-input {
+    font-size: 18px;
+    font-family: 'Tinos', serif;
+    width: 300px;
+    height: 34px;
+}
+
+.input-label {
+font-size: 14px;
+font-family: 'Lato', sans-serif;
+color: #333333;
+}
+
+span.subsection-header {
+margin-right: 20px;
+margin-bottom: 0;
+}
+
+textarea {
+resize: none;
+font-size: 18px;
+font-family: 'Tinos', serif;
+width: 100%;
+height: 136px;
+}
+
+#submit-button {
+background-color: black;
+color: white;
+font-family: 'Tinos', serif;
+height: 2em;
+width: 6em;
+margin: 10px auto;
+font-size: 16px;
+border: none;
+}
+
+#submit-button:hover {
+background-color: #38342c;
+cursor: pointer;
+}
+/* Contact page End */
+
+
+/* Donate */
+
+#soutenir-gany p{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.container-donation {
+    display: flex;
+    justify-content: center;
+}
+
+#donate-button {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #FFA445;
+    padding: 20px 30px 20px 30px;
+    font-size: 30px;
+    border: 3px solid #FFA445;
+    border-radius: 10px;
+
+    transition: all 0.25s;
+}
+
+#donate-button:hover {
+    background-color:#3e3e3e;
+    color: #FFA445;
+    box-shadow: 0 0 30px #FFA445;
+
+}
+
+#donate-button:hover {
+    cursor: pointer;
+}
+
+#donate-button:active {
+    background-color:#585858;
+    color: #fcb263;
+    font-size:25px;
+    box-shadow: 0 0 100px #FFA445;
+}
+
+#thanks-div {
+    position: absolute;
+    height: 60%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#thanks-header {
+    font-size: 5em;
+    text-align: center;
+}
+
+#return-button {
+    color: white;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #393939;
+    padding: 10px;
+    border-radius: 8px;
+
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    
+}
+
+#faites-un-don {
+    padding: 10px;
+    background-color: #E6E6E6;
+}
+
+
+/* Report Page */
+
+@media (max-width: 660px) {
+    #map {
+        width: 100%;
+    }
+}
+
+#report-section {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.report-button {
+    color: white;
+    border-radius: 5px;
+    width: 200px;
+    
+    background-color: #393939;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+
+    overflow: hidden;
+
+    cursor: pointer;
+    border: none;
+}
+
+.report-label {
+    font-size: 1em;
+}
+
+.report-input {
+    font-family: 'Tinos', serif;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    width: 50%;
+    padding: 4px;
+}
+

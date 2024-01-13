@@ -1,0 +1,49 @@
+{
+  "hash": "f312f3f3",
+  "configHash": "4bcc133a",
+  "lockfileHash": "574ba62b",
+  "browserHash": "ed221ad2",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "93bbf4bd",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "1e3663bc",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "c3403f3f",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "fcd75c84",
+      "needsInterop": false
+    },
+    "@googlemaps/js-api-loader": {
+      "src": "../../node_modules/@googlemaps/js-api-loader/dist/index.esm.js",
+      "file": "@googlemaps_js-api-loader.js",
+      "fileHash": "ef590bdb",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-PXJLUKTU": {
+      "file": "chunk-PXJLUKTU.js"
+    },
+    "chunk-FQO5W7GE": {
+      "file": "chunk-FQO5W7GE.js"
+    },
+    "chunk-ZS7NZCD4": {
+      "file": "chunk-ZS7NZCD4.js"
+    }
+  }
+}
